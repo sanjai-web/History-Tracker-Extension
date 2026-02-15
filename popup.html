@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Link Follow Extension</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <div class="header">
+      <h1>🔗 Link Follow</h1>
+      <div class="controls">
+        <label class="toggle-switch">
+          <input type="checkbox" id="trackingToggle">
+          <span class="slider"></span>
+        </label>
+        <span id="statusText" class="status-text">Tracking ON</span>
+      </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="stats">
+      <div class="stat-item">
+        <span class="stat-label">Total Links:</span>
+        <span id="totalLinks" class="stat-value">0</span>
+      </div>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="action-buttons">
+      <button id="exportBtn" class="btn btn-primary">
+        📄 Export to PDF
+      </button>
+      <button id="clearAllBtn" class="btn btn-danger">
+        🗑️ Clear All
+      </button>
+    </div>
+
+    <!-- Links List -->
+    <div class="links-container">
+      <div id="linksList" class="links-list">
+        <!-- Links will be dynamically inserted here -->
+      </div>
+      <div id="emptyState" class="empty-state">
+        <p>No links recorded yet.</p>
+        <p class="empty-hint">Start browsing to track your links!</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="libs/jspdf.umd.min.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
